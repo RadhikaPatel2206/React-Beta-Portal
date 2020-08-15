@@ -22,10 +22,23 @@ const NavBar = () => {
         history.push("/");
     };
 
+    // Redirect depending on user to different pages
+    const redirectHome = (event) => {
+        if (!user) {
+            history.push("/");
+        } else if (user.type === "doctor") {
+            history.push("/patient-search");
+        } else {
+            history.push("patient-profile");
+        }
+    };
+
     // Render NavBar - ClassName using BEM
     return (
         <div className="navbar">
-            <div className="navbar__logo">Portal</div>
+            <div className="navbar__logo" onClick={redirectHome}>
+                Portal
+            </div>
             <div className="navbar__options">
                 {/* Check if user is logged in or not */}
                 {/* If user is not logged in, provide LOGIN else provide LOGOUT */}

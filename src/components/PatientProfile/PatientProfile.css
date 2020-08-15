@@ -1,0 +1,27 @@
+.profile {
+    margin: 50px auto;
+    width: 75%;
+    text-align: center;
+}
+
+.profile__patientData {
+    width: 100%;
+    margin-bottom: 20px !important;
+}
+
+.profile__patientForm {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__patientPassword {
+    flex: 1;
+}
+
+.profile__patientButton {
+    margin-left: 20px !important;
+    background-color: #4b4b4b !important;
+    color: #eeeeee !important;
+}

@@ -42,7 +42,7 @@ const Login = () => {
         event.preventDefault();
         setEmailError(false);
         setEmailErrorText("");
-        const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const re = RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/);
 
         if (!email) {
             // Email provided or not
@@ -65,7 +65,7 @@ const Login = () => {
                     } else {
                         docs.forEach((doc) => {
                             if (doc.data().type === "patient") {
-                                setPatient(doc.data());
+                                setPatient({ id: doc.id, ...doc.data() });
                             } else {
                                 dispatch({
                                     type: "SET_USER",
@@ -107,6 +107,7 @@ const Login = () => {
                     verified: true,
                 },
             });
+            dispatch({ type: "SET_PATIENT", patient: patient });
             sessionStorage.setItem("email", patient.email);
             sessionStorage.setItem("type", patient.type);
             sessionStorage.setItem("verified", true);
