@@ -1,0 +1,33 @@
+.search {
+    margin: 50px auto;
+    width: 75%;
+}
+
+.search__form {
+    display: flex;
+    align-items: center;
+}
+
+.search__input {
+    flex: 1;
+}
+
+.search__list {
+    margin-top: 40px;
+}
+
+.search__notFound {
+    font-size: large;
+    font-weight: bold;
+    color: #4b4b4b;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.search__create {
+    position: fixed !important;
+    bottom: 10px;
+    right: 40px;
+    background-color: #eeeeee !important;
+    color: #4b4b4b !important;
+}

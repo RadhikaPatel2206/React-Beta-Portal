@@ -8,7 +8,7 @@ import { useStateValue } from "../context/contextSetup";
 import NavBar from "./NavBar/Navbar";
 import Login from "./Login/Login";
 import PatientSearch from "./PatientSearch/PatientSearch";
-import PatientProfile from "./PatientProfile/PatientProfile";
+import Profile from "./Profile/Profile";
 import Error404 from "./Error/Error404";
 
 const App = () => {
@@ -39,11 +39,7 @@ const App = () => {
             {/* Switch will cause only the first matching route to be selected/executed */}
             <Switch>
                 <Route exact path="/patient-search" component={PatientSearch} />
-                <Route
-                    exact
-                    path="/patient-profile"
-                    component={PatientProfile}
-                />
+                <Route exact path="/patient-profile" component={Profile} />
                 <Route exact path="/" component={Login} />
                 <Route component={Error404} />
             </Switch>

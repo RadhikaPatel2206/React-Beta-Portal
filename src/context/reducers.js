@@ -1,6 +1,8 @@
 export const initialState = {
     user: null,
     patient: null,
+    patients: [],
+    createStatus: false,
 };
 
 const reducer = (state, action) => {
@@ -9,11 +11,15 @@ const reducer = (state, action) => {
             return { ...state, user: action.user };
         case "SET_PATIENT":
             return { ...state, patient: action.patient };
-        case "UPDATE_PWD":
+        case "UPDATE_PATIENT":
             return {
                 ...state,
-                patient: { ...state.patient, password: action.password },
+                patient: { ...state.patient, ...action.patient },
             };
+        case "SET_PATIENT_LIST":
+            return { ...state, patients: action.patients };
+        case "CREATE_PATIENT":
+            return { ...state, createStatus: action.status };
         default:
             return state;
     }

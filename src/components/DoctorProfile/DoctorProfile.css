@@ -1,0 +1,20 @@
+.profile__doctorForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__doctorData {
+    width: 100%;
+    margin-bottom: 20px !important;
+}
+
+.profile__doctorButton {
+    display: flex;
+    margin-top: 20px;
+}
+
+.doctor--color {
+    background-color: #4b4b4b !important;
+    color: #eeeeee !important;
+    margin-right: 20px !important;
+}

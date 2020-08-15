@@ -1,0 +1,19 @@
+.card {
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 16px;
+    border: 1px solid #4b4b4b;
+    color: #4b4b4b;
+    border-radius: 8px;
+    transition: all 0.25s ease-in-out;
+    font-size: large;
+}
+
+.card:hover {
+    transform: translate3d(0, -5px, 0);
+    box-shadow: 5px 5px 10px rgb(75, 75, 75, 0.7);
+}
+
+.card__label {
+    font-weight: bold;
+}
