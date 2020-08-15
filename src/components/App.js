@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+// Context API usage import
+import { useStateValue } from "../context/contextSetup";
 
 // Components import
 import NavBar from "./NavBar/Navbar";
@@ -9,6 +12,23 @@ import PatientProfile from "./PatientProfile/PatientProfile";
 import Error404 from "./Error/Error404";
 
 const App = () => {
+    // Context API use
+    const [, dispatch] = useStateValue();
+
+    // Load session info in Context API
+    useEffect(() => {
+        if (sessionStorage.getItem("verified")) {
+            dispatch({
+                type: "SET_USER",
+                user: {
+                    email: sessionStorage.getItem("email"),
+                    type: sessionStorage.getItem("type"),
+                    verified: sessionStorage.getItem("verified"),
+                },
+            });
+        }
+    }, [dispatch]);
+
     return (
         <BrowserRouter>
             {/* Navigation Bar/Header */}
