@@ -1,0 +1,37 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #4b4b4b;
+    padding: 20px;
+    display: flex;
+    z-index: 10;
+}
+
+.navbar__logo {
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #eeeeee;
+    text-shadow: 2px 2px 5px #eeeeee;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar__options {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar__link {
+    text-decoration: none;
+}
+
+.navbar__button {
+    background-color: #eeeeee !important;
+    color: #4b4b4b !important;
+    font-weight: bold !important;
+    margin-left: 20px !important;
+}
