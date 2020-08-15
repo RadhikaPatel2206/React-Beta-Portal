@@ -125,7 +125,7 @@ const DoctorProfile = ({ createStatus, patient }) => {
                 if (createStatus) {
                     db.collection("users").add({
                         ...tempPatient,
-                        password: "healthecare",
+                        password: "healthcare",
                     });
                 } else if (patient) {
                     db.collection("users")
