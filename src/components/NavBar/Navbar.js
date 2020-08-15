@@ -22,21 +22,10 @@ const NavBar = () => {
         history.push("/");
     };
 
-    // Redirect depending on user to different pages
-    const redirectHome = (event) => {
-        if (!user) {
-            history.push("/");
-        } else if (user.type === "doctor") {
-            history.push("/patient-search");
-        } else {
-            history.push("patient-profile");
-        }
-    };
-
     // Render NavBar - ClassName using BEM
     return (
         <div className="navbar">
-            <div className="navbar__logo" onClick={redirectHome}>
+            <div className="navbar__logo" onClick={(e) => history.push("/")}>
                 Portal
             </div>
             <div className="navbar__options">

@@ -135,7 +135,7 @@ const DoctorProfile = ({ createStatus, patient }) => {
                 }
 
                 alert("Patient updated/created successfully.");
-                history.push("/patient-search");
+                history.push("/");
         }
     };
 
@@ -144,7 +144,7 @@ const DoctorProfile = ({ createStatus, patient }) => {
         event.preventDefault();
         db.collection("users").doc(patient.id).delete();
         alert("Patient deleted successfully");
-        history.push("/patient-search");
+        history.push("/");
     };
 
     // Render Profile for Doctor - ClassName using BEM

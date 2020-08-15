@@ -13,7 +13,7 @@ import Error404 from "./Error/Error404";
 
 const App = () => {
     // Context API use
-    const [, dispatch] = useStateValue();
+    const [{ user }, dispatch] = useStateValue();
 
     // Load session info in Context API
     useEffect(() => {
@@ -40,7 +40,17 @@ const App = () => {
             <Switch>
                 <Route exact path="/patient-search" component={PatientSearch} />
                 <Route exact path="/patient-profile" component={Profile} />
-                <Route exact path="/" component={Login} />
+                <Route
+                    exact
+                    path="/"
+                    component={
+                        !user
+                            ? Login
+                            : user.type === "doctor"
+                            ? PatientSearch
+                            : Profile
+                    }
+                />
                 <Route component={Error404} />
             </Switch>
         </BrowserRouter>

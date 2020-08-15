@@ -1,0 +1,22 @@
+.error404 {
+    margin: 50px auto;
+    width: 75%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: #4b4b4b;
+    font-size: large;
+}
+
+.error404__title {
+    font-size: 16rem;
+    font-weight: bold;
+}
+
+.error404__link {
+    text-decoration: none;
+}
+
+.error404__button {
+    margin-top: 30px !important;
+}
